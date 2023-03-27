@@ -1,4 +1,5 @@
-"original_synergy_data.csv" contains the synergy instances obtained from the AZ-DREAM challenge website (https://www.synapse.org/#!Synapse:syn4231880/wiki/), 
+## original_synergy_data.csv
+original_synergy_data.csv contains the synergy instances obtained from the AZ-DREAM challenge website (https://www.synapse.org/#!Synapse:syn4231880/wiki/), 
 and used as the original dataset in the machine learning performance comparison.
 
 The "track" column is used to mark the training and testing sets in cross-validation and therefore ensure that 
@@ -14,3 +15,5 @@ The 900-dimensional features are used as the input to the machine learning model
 
 For "SYNERGY_SCORE">=20, the two drugs are considered as synergistic (class 1); 
 for "SYNERGY_SCORE"<=-20, the two drugs are considered as antagonistic (class 0).
+
+## original_synergy_data.csv
