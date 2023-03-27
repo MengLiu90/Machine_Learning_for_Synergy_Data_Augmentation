@@ -1,4 +1,4 @@
-This dataset contains the synergy instances obtained from the AZ-DREAM challenge website (https://www.synapse.org/#!Synapse:syn4231880/wiki/), 
+"original_synergy_data.csv" contains the synergy instances obtained from the AZ-DREAM challenge website (https://www.synapse.org/#!Synapse:syn4231880/wiki/), 
 and used as the original dataset in the machine learning performance comparison.
 
 The "track" column is used to mark the training and testing sets in cross-validation and therefore ensure that 
