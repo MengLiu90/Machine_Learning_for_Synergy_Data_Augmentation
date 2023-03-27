@@ -20,7 +20,7 @@ python protein_chemical.py
 ## Step 2: Extract all the targets for CIDs in chemical-protein links if target in IHP-PING
 This step requires users to have IHP-PING PPI in a csv file downloaded in the same folder as the `make_nodes_dict.py`
 ```
-python make_nodes_dict.py
+python nodes_dict.py
 ```
 ## Step 3: Similarity search of CIDs from AZ-DREAM challenge against STITCH
 Get all SMILES files from AZ-DREAM synergy data
@@ -56,5 +56,5 @@ for out in out_list:
 Replace "filename" with the CSV input file
 
 ```
-python original_dac.py
+python dacs.py
 ```
