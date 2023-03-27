@@ -1,25 +1,15 @@
-## this file run the random forest with original and augmented dataset,
-## and also produce the results of all the metrics
-## 'samples_keep/samples_fold_{fold_cnt}_keep.csv' contains the samples from augmented dataset for each
-# fold that can improve the performance for sure (no matter what hyperparameters are used).
-## These samples are obtained using 'RF_randomsplit_hyperparameters_min_sample_leaf.py'
+## this file run the random forest with original and augmented dataset
 
 import pandas as pd
-import random
-import sklearn
-import numpy as np
 from numpy import *
 from sklearn.model_selection import train_test_split, StratifiedKFold
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, roc_curve, f1_score
-import matplotlib.pyplot as plt
 from collections import Counter
 
-df = pd.read_csv('Data/ClassicalML/synergy_cly_embedded_rename_tscomb.csv')
+df = pd.read_csv('Data/original_synergy_data.csv')
 c = dict(Counter(df['class']))
-# frac_1 = c.get(1)/len(df)
-# frac_0 = c.get(0)/len(df)
 columns = ['fold_0','fold_1','fold_2','fold_3','fold_4']
 df_tr_acc = pd.DataFrame(columns=columns)
 df_tr_auc = pd.DataFrame(columns=columns)
@@ -130,10 +120,7 @@ for train_index, test_index in skf.split(df, df.iloc[:, 5]):
     TN = confusionmatrix[0][0]
     FP = confusionmatrix[0][1]
     FN = confusionmatrix[1][0]
-    # print('TP', TP)
-    # print('TN', TN)
-    # print('FP', FP)
-    # print('FN', FN)
+  
     fpr_fromCF = FP / (FP + TN)
     mcc = (TP * TN - FP * FN) / np.sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN))
 
@@ -141,10 +128,7 @@ for train_index, test_index in skf.split(df, df.iloc[:, 5]):
     TN_aug = confusionmatrix_aug[0][0]
     FP_aug = confusionmatrix_aug[0][1]
     FN_aug = confusionmatrix_aug[1][0]
-    # print('TP_aug', TP_aug)
-    # print('TN_aug', TN_aug)
-    # print('FP_aug', FP_aug)
-    # print('FN_aug', FN_aug)
+  
     fpr_aug_fromCF = FP_aug / (FP_aug + TN_aug)
     mcc_aug = (TP_aug * TN_aug - FP_aug * FN_aug) / np.sqrt(
         (TP_aug + FP_aug) * (TP_aug + FN_aug) * (TN_aug + FP_aug) * (TN_aug + FN_aug))
