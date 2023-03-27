@@ -16,4 +16,8 @@ The 900-dimensional features are used as the input to the machine learning model
 For "SYNERGY_SCORE">=20, the two drugs are considered as synergistic (class 1); 
 for "SYNERGY_SCORE"<=-20, the two drugs are considered as antagonistic (class 0).
 
-## original_synergy_data.csv
+## Data in the folders
+Data in the folders contain the augmented data that were used to generate the results.
+As running 2.3 million instances all togetgher takes too long time and too much memory, we did a random sample from the augmented data.
+The augmentation instances included here were used to produce results in the paper.
+For the complete augmented data, please access through the link https://lsu.box.com/v/data-augmentation
