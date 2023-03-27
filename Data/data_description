@@ -22,3 +22,9 @@ Data in the folders contain the augmented data that were used to generate the re
 As running 2.3 million instances all togetgher takes too long time and too much memory, we did a random sample from the augmented data.
 The augmentation instances included here were used to produce results in the paper.
 For the complete augmented data, please access through the link https://lsu.box.com/v/data-augmentation
+
+## Note
+The .tgz files can be extracted to .csv files using the following python command
+file = tarfile.open('Data_Directory/file_name.tgz')
+file.extractall('./Data_Directory')
+file.close()
