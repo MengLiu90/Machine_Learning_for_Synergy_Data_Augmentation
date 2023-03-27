@@ -1,6 +1,16 @@
-This dataset contains the synergy instances obtained from the AZ-DREAM challenge website (https://www.synapse.org/#!Synapse:syn4231880/wiki/), and used as the original dataset in the machine learning performance comparison.
-The "track" column is used to mark the training and testing sets in cross-validation and therefore ensure that only training-set-related augmented data are used to enlarge the training set in each fold.
-"drug1_0" to "drug1_299" is the 300-dimensional embedding for CID_1 in the instance, and "drug2_0" to "drug2_299" is the 300-dimensional embeddings for CID_2.
+This dataset contains the synergy instances obtained from the AZ-DREAM challenge website (https://www.synapse.org/#!Synapse:syn4231880/wiki/), 
+and used as the original dataset in the machine learning performance comparison.
+
+The "track" column is used to mark the training and testing sets in cross-validation and therefore ensure that 
+only training-set-related augmented data are used to enlarge the training set in each fold.
+
+"drug1_0" to "drug1_299" is the 300-dimensional embedding for CID_1 in the instance.
+
+"drug2_0" to "drug2_299" is the 300-dimensional embedding for CID_2.
+
 "gex_0" to "gex_299 is the 300-dimensional embedded gene expression of each cell line, used as the cellular features during training.
+
 The 900-dimensional features are used as the input to the machine learning model, and the label of each instance is given by "class" column.
-For "SYNERGY_SCORE">=20, the two drugs are considered as synergistic (class 1); for "SYNERGY_SCORE"<=-20, the two drugs are considered as antagonistic (class 0).
+
+For "SYNERGY_SCORE">=20, the two drugs are considered as synergistic (class 1); 
+for "SYNERGY_SCORE"<=-20, the two drugs are considered as antagonistic (class 0).
