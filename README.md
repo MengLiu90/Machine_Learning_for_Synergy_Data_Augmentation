@@ -5,3 +5,5 @@ This repo tests the augmented synergy data with random forest and gradient boost
 2. numpy
 3. sklearn
 # Usage
+## dataset
+## cross-validation
