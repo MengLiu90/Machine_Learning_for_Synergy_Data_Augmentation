@@ -1,4 +1,4 @@
-## this file run the random forest with original and augmented dataset
+## this file run the random forest with original and augmented dataset under random split
 
 import pandas as pd
 from numpy import *
