@@ -41,7 +41,7 @@ for train_index, test_index in skf.split(df, df.iloc[:, 5]):
     train_set = df.iloc[train_index, :]
     test_set = df.iloc[test_index, :]
 
-    sample_keep = pd.read_csv(f'Data/ClassicalML/RF_rand_samples_keep/samples_fold_{fold_cnt}_k1.csv')
+    sample_keep = pd.read_csv(f'Data/RandomForest_random_split/fold_{fold_cnt}.csv')
     aug_sampled = sample_keep.sample(frac=1,random_state=123)
 
     train_aug_feature = pd.concat([aug_sampled.iloc[:, 8:908], train_set.iloc[:, 7:907]])
@@ -72,11 +72,11 @@ for train_index, test_index in skf.split(df, df.iloc[:, 5]):
     df_test_acc.at[0, f'fold_{fold_cnt}'] = acc
     df_test_auc.at[0, f'fold_{fold_cnt}'] = roc_auc
 
-    # np.save(f'Data/ClassicalML/samples_keep_seed42/results/train_fpr_fold_{fold_cnt}.npy', fpr_train)
-    # np.save(f'Data/ClassicalML/samples_keep_seed42/results/train_tpr_fold_{fold_cnt}.npy', tpr_train)
+    # np.save(f'Results/RandomForest_random_split/train_fpr_fold_{fold_cnt}.npy', fpr_train)
+    # np.save(f'Results/RandomForest_random_split/train_tpr_fold_{fold_cnt}.npy', tpr_train)
 
-    np.save(f'Data/ClassicalML/RF_rand_samples_keep/results/test_fpr_fold_{fold_cnt}.npy', fpr)
-    np.save(f'Data/ClassicalML/RF_rand_samples_keep/results/test_tpr_fold_{fold_cnt}.npy', tpr)
+    np.save(f'Results/RandomForest_random_split/test_fpr_fold_{fold_cnt}.npy', fpr)
+    np.save(f'Results/RandomForest_random_split/test_tpr_fold_{fold_cnt}.npy', tpr)
 
     confusionmatrix = confusion_matrix(test_set.iloc[:, 5], y_pred)
     p_score = precision_score(test_set.iloc[:, 5], y_pred)
@@ -108,8 +108,8 @@ for train_index, test_index in skf.split(df, df.iloc[:, 5]):
     df_aug_test_acc.at[0, f'fold_{fold_cnt}'] = acc_aug
     df_aug_test_auc.at[0, f'fold_{fold_cnt}'] = roc_auc_aug
 
-    np.save(f'Data/ClassicalML/RF_rand_samples_keep/results/aug_test_fpr_fold_{fold_cnt}.npy', fpr_aug)
-    np.save(f'Data/ClassicalML/RF_rand_samples_keep/results/aug_test_tpr_fold_{fold_cnt}.npy', tpr_aug)
+    np.save(f'Results/RandomForest_random_split/aug_test_fpr_fold_{fold_cnt}.npy', fpr_aug)
+    np.save(f'Results/RandomForest_random_split/aug_test_tpr_fold_{fold_cnt}.npy', tpr_aug)
 
     confusionmatrix_aug = confusion_matrix(test_set.iloc[:, 5], y_pred_aug)
     p_score_aug = precision_score(test_set.iloc[:, 5], y_pred_aug)
@@ -138,8 +138,8 @@ for train_index, test_index in skf.split(df, df.iloc[:, 5]):
     FPR_cal_aug[fold_cnt] = fpr_aug_fromCF
     MCC_cal_aug[fold_cnt] = mcc_aug
 
-    np.save(f'Data/ClassicalML/RF_rand_samples_keep/results/confusion_matrix_fold_{fold_cnt}.npy', confusionmatrix)
-    np.save(f'Data/ClassicalML/RF_rand_samples_keep/results/confusion_matrix_aug_fold_{fold_cnt}.npy', confusionmatrix_aug)
+    np.save(f'Results/RandomForest_random_split/confusion_matrix_fold_{fold_cnt}.npy', confusionmatrix)
+    np.save(f'Results/RandomForest_random_split/confusion_matrix_aug_fold_{fold_cnt}.npy', confusionmatrix_aug)
 
     df_precision_score.at[0, f'fold_{fold_cnt}'] = p_score
     df_precision_score_aug.at[0, f'fold_{fold_cnt}'] = p_score_aug
@@ -184,19 +184,19 @@ print('aug_f1:',df_f1_aug['mean'].values)
 print('FPR:', mean_fpr, 'aug_FPR:', aug_mean_fpr)
 print('MCC:', mean_mcc, 'aug_MCC:', aug_mean_mcc)
 
-df_tr_acc.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/train_accuracy.csv', index=False)
-df_tr_auc.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/train_roc_auc.csv', index=False)
-df_test_acc.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/test_accuracy.csv', index=False)
-df_test_auc.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/test_roc_auc.csv', index=False)
+df_tr_acc.to_csv('Results/RandomForest_random_split/train_accuracy.csv', index=False)
+df_tr_auc.to_csv('Results/RandomForest_random_split/train_roc_auc.csv', index=False)
+df_test_acc.to_csv('Results/RandomForest_random_split/test_accuracy.csv', index=False)
+df_test_auc.to_csv('Results/RandomForest_random_split/test_roc_auc.csv', index=False)
 
-df_aug_tr_acc.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/aug_train_accuracy.csv', index=False)
-df_aug_tr_auc.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/aug_train_roc_auc.csv', index=False)
-df_aug_test_acc.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/aug_test_accuracy.csv', index=False)
-df_aug_test_auc.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/aug_test_roc_auc.csv', index=False)
+df_aug_tr_acc.to_csv('Results/RandomForest_random_split/aug_train_accuracy.csv', index=False)
+df_aug_tr_auc.to_csv('Results/RandomForest_random_split/aug_train_roc_auc.csv', index=False)
+df_aug_test_acc.to_csv('Results/RandomForest_random_split/aug_test_accuracy.csv', index=False)
+df_aug_test_auc.to_csv('Results/RandomForest_random_split/aug_test_roc_auc.csv', index=False)
 
-df_precision_score.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/precision_score.csv', index=False)
-df_precision_score_aug.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/precision_score_aug.csv', index=False)
-df_recall_score.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/recall_score.csv', index=False)
-df_recall_score_aug.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/recall_score_aug.csv', index=False)
-df_f1.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/f1_score.csv', index=False)
-df_f1_aug.to_csv('Data/ClassicalML/RF_rand_samples_keep/results/f1_score_aug.csv', index=False)
+df_precision_score.to_csv('Results/RandomForest_random_split/precision_score.csv', index=False)
+df_precision_score_aug.to_csv('Results/RandomForest_random_split/precision_score_aug.csv', index=False)
+df_recall_score.to_csv('Results/RandomForest_random_split/recall_score.csv', index=False)
+df_recall_score_aug.to_csv('Results/RandomForest_random_split/recall_score_aug.csv', index=False)
+df_f1.to_csv('Results/RandomForest_random_split/f1_score.csv', index=False)
+df_f1_aug.to_csv('Results/RandomForest_random_split/f1_score_aug.csv', index=False)
