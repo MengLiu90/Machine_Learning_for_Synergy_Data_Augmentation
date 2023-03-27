@@ -7,3 +7,4 @@ This repo tests the augmented synergy data with random forest and gradient boost
 # Usage
 ## dataset
 ## cross-validation
+## split method
