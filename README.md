@@ -9,6 +9,7 @@ the augmented synergy data. The performance of the models on different datasets 
 4. matplotlib
 5. tarfile
 # Usage
+To reproduce the results in the paper, simply download the repository and run the .py files
 ## Dataset
 
 ## Cross-validation
