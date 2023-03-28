@@ -9,7 +9,7 @@ the augmented synergy data. The performance of the models on different datasets 
 4. matplotlib
 5. tarfile
 ## Usage
-To reproduce the results in the paper, simply download the repository and run the .py files. <br />
+To reproduce the machine learning results in the paper, simply download the repository and run the .py files. <br />
 ```python RandomForest_random_split.py```<br />
 ```python RandomForest_tissue_split.py.py```<br />
 ```python GBT_random_split.py```<br />
