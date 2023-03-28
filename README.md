@@ -18,7 +18,7 @@ To reproduce the results in the paper, simply download the repository and run th
 ## Datasets
 The file original_synergy_data.tgz provides the original synergy data used for classification. The complete augmented data can be accessed through https://lsu.box.com/v/data-augmentation. We randomly sampled from the augmented dataset to improve efficiency and reduce memory usage during the training process. The augmented data were only used for training, the models were tested against the original synergy data. <br />
 <br />
-To train your own models with the augmented data, please make sure that only training set-related augmentation data are used to enlarge the training space, otherwise there will be an overlap between the training and testing sets as augmentaed instances originated from the testing set are included during training.
+To train your own models with the augmented data, please make sure that only training set-related augmentation data are used to enlarge the training space, otherwise there will be an overlap between the training and testing sets as augmented instances originated from the testing set are included during training.
 ## Cross-validation
 
 ## Data splitting method
