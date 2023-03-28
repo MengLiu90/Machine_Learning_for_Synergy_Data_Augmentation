@@ -16,6 +16,6 @@ To reproduce the results in the paper, simply download the repository and run th
 ```python GBT_tissue_split.py```<br />
 ```python Code_for_ROC_plots.py```<br />
 # Datasets
-original_synergy_data.tgz file provides the original synergy data. The complete augmented data can be accessed through https://lsu.box.com/v/data-augmentation
+The file original_synergy_data.tgz provides the original synergy data. The complete augmented data can be accessed through https://lsu.box.com/v/data-augmentation.
 ## Cross-validation
 ## Data splitting method
