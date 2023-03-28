@@ -58,3 +58,25 @@ Replace "filename" with the CSV input file
 ```
 python dacs.py
 ```
+
+## Step 5: Concat all dacs data into one file
+Get header from the first dacs file and save it in a `header.txt`
+
+```
+for f in dacs_*
+do
+sed -i 1d $f;
+done;
+```
+Concat all the dacs files into a larger file
+
+```
+cat path_to_dacs_files/dacs_* > dacs_score_between_original_drug_and_similar_drugs.csv
+```
+## Step 6: get augemnted data
+Use the `augmentation.py` to get augmented data
+```
+python augmented.py
+```
+
+
