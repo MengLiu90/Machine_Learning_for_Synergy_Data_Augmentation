@@ -21,5 +21,11 @@ The file ```./Data/original_synergy_data.tgz``` provides the original synergy da
 ## Training
 To train your own models with the augmented data, after splitting the original data into train/test sets, please make sure that only training set-related augmentation data are used to enlarge the training space, otherwise there will be an overlap between the training and testing sets as augmented instances originated from the testing set are included during training.
 ## Cross-validation
+This repo conducts 5-fold cross-validation under random split and tissue-level split.<br />
+<br />
+Random split is the method widely adopted in machine learning literature, however, it neglects the fact that cell lines from the same tissue can present in both training and testing sets, which can lead to overlap between these two sets as instances involving similar cell lines tend to have comparable feature representations, such as gene expression profiles.<br />
+<br />
+Tissue-level split partitions the data based on tissues from which the cell lines originate. It can eliminate the overlap occurs in random split method.<br />
+<br />
+Cross-validation with both splitting methods are provided in the repo to form a comparison. 
 
-## Data splitting method
