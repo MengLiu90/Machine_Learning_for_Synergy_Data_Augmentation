@@ -10,7 +10,10 @@ the augmented synergy data. The performance of the models on different datasets 
 5. tarfile
 # Usage
 To reproduce the results in the paper, simply download the repository and run the .py files <br />
-```python RandomForest_random_split.py```
+```python RandomForest_random_split.py```<br />
+```python RandomForest_tissue_split.py.py```<br />
+```python GBT_random_split.py```<br />
+```python GBT_tissue_split.py```<br />
 ## Dataset
 
 ## Cross-validation
