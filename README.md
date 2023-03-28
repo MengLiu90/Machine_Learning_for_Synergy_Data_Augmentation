@@ -15,7 +15,7 @@ To reproduce the results in the paper, simply download the repository and run th
 ```python GBT_random_split.py```<br />
 ```python GBT_tissue_split.py```<br />
 ```python Code_for_ROC_plots.py```<br />
-# Dataset
-The original synergy data provided in original_synergy_data.tgz file contains 3210 instances with 2,461 synergistic (a synergy score ≥20) and 749 antagonistic (a synergy score ≤-20) cases.
+# Datasets
+original_synergy_data.tgz file provides the original synergy data. The complete augmented data can be accessed through https://lsu.box.com/v/data-augmentation
 ## Cross-validation
 ## Data splitting method
