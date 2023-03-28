@@ -25,7 +25,7 @@ This repo conducts 5-fold cross-validation under random split and tissue-level s
 <br />
 Random splitting is a widely adopted method in machine learning literature. However, it does not consider the possibility of including cell lines from the same tissue in both the training and testing sets. This can result in overlap between the sets, as instances involving similar cell lines tend to have comparable feature representations, such as gene expression profiles.<br />
 <br />
-Tissue-level splitting partitions the data based on the tissues from which the cell lines originate. This method can eliminate the overlap that occurs in the random splitting method<br />
+Tissue-level splitting partitions the data based on the tissues from which the cell lines originate. This method can eliminate the overlap that occurs in the random splitting method.<br />
 <br />
 The repository provides cross-validation using both splitting methods for comparison.
 
