@@ -9,13 +9,13 @@ the augmented synergy data. The performance of the models on different datasets 
 4. matplotlib
 5. tarfile
 # Usage
-To reproduce the results in the paper, simply download the repository and run the .py files <br />
+To reproduce the results in the paper, simply download the repository and run the .py files. <br />
 ```python RandomForest_random_split.py```<br />
 ```python RandomForest_tissue_split.py.py```<br />
 ```python GBT_random_split.py```<br />
 ```python GBT_tissue_split.py```<br />
 ```python Code_for_ROC_plots.py```<br />
-## Dataset
-
+# Dataset
+The original synergy data provided in original_synergy_data.tgz file contains 3210 instances with 2,461 synergistic (a synergy score ≥20) and 749 antagonistic (a synergy score ≤-20) cases.
 ## Cross-validation
 ## Data splitting method
