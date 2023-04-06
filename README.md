@@ -16,7 +16,7 @@ To reproduce the machine learning results in the paper, simply download the repo
 ```python GBT_tissue_split.py```<br />
 ```python Code_for_ROC_plots.py```<br />
 ## Datasets
-The file ```./Data/original_synergy_data.tgz``` provides the original synergy data used for classification. The complete augmented data can be accessed through https://lsu.box.com/v/data-augmentation. We randomly sampled from the augmented dataset to improve efficiency and reduce memory usage during the training process. The augmented data used are provided in the ```./Data``` folder to reproduce the results in the paper. The augmented data were only used for training, the models were tested against the original synergy data. <br />
+The file ```./Data/original_synergy_data.tgz``` provides the original synergy data used for classification. The complete augmented data can be accessed through https://osf.io/kd9e7/. We randomly sampled from the augmented dataset to improve efficiency and reduce memory usage during the training process. The augmented data used are provided in the ```./Data``` folder to reproduce the results in the paper. The augmented data were only used for training, the models were tested against the original synergy data. <br />
 <br />
 ## Training
 To train your own models with the augmented data, after splitting the original data into train/test sets, please make sure that only training set-related augmentation data are used to enlarge the training space, otherwise there will be an overlap between the training and testing sets as augmented instances originated from the testing set are included during training.
