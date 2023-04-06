@@ -21,7 +21,7 @@ for "SYNERGY_SCORE"<=-20, the two drugs are considered as antagonistic (class 0)
 Data in the folders contain the augmented data that were used to generate the results.
 As running 2.3 million instances all togetgher takes too long time and too much memory, we did a random sample from the augmented data.
 The augmentation instances included here were used to produce results in the paper.
-For the complete augmented data, please access through the link https://lsu.box.com/v/data-augmentation
+For the complete augmented data, please access through the link https://osf.io/kd9e7/
 
 ## Note
 The .tgz files can be extracted to .csv files using the following python command
