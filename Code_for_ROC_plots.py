@@ -229,5 +229,5 @@ ax2.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc="l
 ax3.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc="lower right", prop={'size': 15})
 ax4.legend([handles[idx] for idx in order],[labels[idx] for idx in order],loc="lower right", prop={'size': 15})
 
-plt.savefig('Figure/ROC_curves.png')
+plt.savefig('Results/Figure/ROC_curves.png')
 plt.show()
